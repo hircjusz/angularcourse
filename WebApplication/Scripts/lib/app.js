@@ -10,6 +10,11 @@ app.controller('MainController', function($scope) {
         $scope.val += 1;
         $scope.even= $scope.val % 2 == 0;
     };
+    $scope.classVar = "orange";
 });
 
+
+app.controller('SubController', function($scope) {
+    
+});
 

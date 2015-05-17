@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="Styles/app1.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
     <div ng-controller="MainController">
         {{ val }}
-            <button ng-click="inc()">Click me</button>
+        <button ng-click="inc()">Click me</button>
         <h2 ng-show="even">even</h2>
         <h2 ng-hide="even">odd</h2>
         <div ng-repeat="element in myarr track by $index">
@@ -24,7 +25,24 @@
         <div ng-repeat="attr in users">
             {{attr}}
         </div>
+        <h1 ng-class="classVar">Hello there</h1>
+        <h1 ng-class="{orange :false}">Hello there</h1>
+        <h1 ng-class="{orange :true}">Hello there</h1>
+        <div ng-include="'test.html'">
+        </div>
+        <input ng-model="mydata.val"/>
+        <button ng-click="mydata.val='123'">123</button>
+        <h1>{{mydata.val}}</h1>
+        <div ng-controller="SubController">
+            <input ng-model="mydata.val"/>
+            <h1>{{mydata.val}}</h1>
+        </div>
     </div>
+
+    <script type="text/ng-template" id="test.html">
+        <h1>My template</h1>
+    </script>
+
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/lib/app.js"></script>
 </body>
