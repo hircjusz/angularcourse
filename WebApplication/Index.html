@@ -9,6 +9,21 @@
             <button ng-click="inc()">Click me</button>
         <h2 ng-show="even">even</h2>
         <h2 ng-hide="even">odd</h2>
+        <div ng-repeat="element in myarr track by $index">
+            <span ng-show="$first">first</span>
+            <span ng-show="$middle">middle</span>
+            <span ng-show="$last">last</span>
+            <span ng-show="$even">even</span>
+            <span ng-show="$odd">odd</span>
+            <span>{{element}}</span>
+        </div>
+        <div ng-repeat-start="user in users">
+            <strong>{{user.name}}</strong>:{{user.age}}
+        </div>
+        <hr ng-repeat-end />
+        <div ng-repeat="attr in users">
+            {{attr}}
+        </div>
     </div>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/lib/app.js"></script>
