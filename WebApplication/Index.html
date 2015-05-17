@@ -2,18 +2,15 @@
 <html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-   
-    
 </head>
-    <body>
-        <div ng-controller="MainController">
-            {{ val }}
-        </div>
-        {{12+12}}
-        hello angular 
-        
-        
+<body>
+    <div ng-controller="MainController">
+        {{ val }}
+            <button ng-click="inc()">Click me</button>
+        <h2 ng-show="even">even</h2>
+        <h2 ng-hide="even">odd</h2>
+    </div>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/lib/app.js"></script>
-    </body>
+</body>
 </html>
