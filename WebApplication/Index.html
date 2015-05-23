@@ -1,49 +1,17 @@
 ﻿<!DOCTYPE html>
-<html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">
+<html  ng-app="angularFormsApp" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link href="Styles/app1.css" rel="stylesheet" />
     <title></title>
-</head>
-<body>
-    <div ng-controller="MainController">
-        {{ val }}
-        <button ng-click="inc()">Click me</button>
-        <h2 ng-show="even">even</h2>
-        <h2 ng-hide="even">odd</h2>
-        <div ng-repeat="element in myarr track by $index">
-            <span ng-show="$first">first</span>
-            <span ng-show="$middle">middle</span>
-            <span ng-show="$last">last</span>
-            <span ng-show="$even">even</span>
-            <span ng-show="$odd">odd</span>
-            <span>{{element}}</span>
-        </div>
-        <div ng-repeat-start="user in users">
-            <strong>{{user.name}}</strong>:{{user.age}}
-        </div>
-        <hr ng-repeat-end />
-        <div ng-repeat="attr in users">
-            {{attr}}
-        </div>
-        <h1 ng-class="classVar">Hello there</h1>
-        <h1 ng-class="{orange :false}">Hello there</h1>
-        <h1 ng-class="{orange :true}">Hello there</h1>
-        <div ng-include="'test.html'">
-        </div>
-        <input ng-model="mydata.val"/>
-        <button ng-click="mydata.val='123'">123</button>
-        <h1>{{mydata.val}}</h1>
-        <div ng-controller="SubController">
-            <input ng-model="mydata.val"/>
-            <h1>{{mydata.val}}</h1>
-        </div>
-    </div>
-
-    <script type="text/ng-template" id="test.html">
-        <h1>My template</h1>
-    </script>
-
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/angular.js"></script>
-    <script src="Scripts/lib/app.js"></script>
+    <script src="app/AngularFormsApp.js"></script>
+    <script src="app/EmployeeForm/efController.js"></script>
+    <script src="app/EmployeeForm/efDirective.js"></script>
+    <script src="app/EmployeeForm/efService.js"></script>
+</head>
+<body ng-controller="efController" class="container">
+    hello angular
+    <employee-form/>
 </body>
 </html>
+
