@@ -1,14 +1,17 @@
 ﻿<!DOCTYPE html>
-<html  ng-app="angularFormsApp" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="angularFormsApp" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-  
+
 </head>
 <body ng-controller="efController" class="container">
-    hello angular
-    <employee-form/>
+    <h1>start page</h1>
+    <div ng-view>
+    </div>
+    <!--   <employee-form/>-->
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
     <script src="app/AngularFormsApp.js"></script>
     <script src="app/EmployeeForm/efController.js"></script>
     <script src="app/EmployeeForm/efDirective.js"></script>
