@@ -6,7 +6,7 @@
 
         <fieldset>
             <legend>Basic Information</legend>
-            <div class="form-group" ng-class="{'has-error':employeeForm.fullName.$invalid}">
+            <div class="form-group" ng-class="{'has-error':employeeForm.fullName.$invalid && employeeForm.fullName.$dirty}">
                 <label for="fullName" class="col-sm-3 control-label">Name</label>
                 <div class="col-sm-9">
                     <input type="text" id="fullName" name="fullName" class="form-control" 
@@ -14,6 +14,16 @@
                     <span class="help-block" ng-show="employeeForm.fullName.$error.required">Full Name is required</span>
                 </div>
             </div>
+            
+             <div class="form-group" show-errors>
+                <label for="email" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="text" id="Text1" name="fullName" class="form-control" 
+                           ng-model="editableEmployee.email" ng-required="true"/>
+                    <span class="help-block" ng-show="employeeForm.email.$invalid &&employeeForm.email.$dirty ">Email is Not valid</span>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="notes" class="col-sm-3 control-label">Notes</label>
                 <div class="col-sm-9">
