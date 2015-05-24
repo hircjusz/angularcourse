@@ -65,7 +65,9 @@
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" value="isUnderNonCompete" ng-model="editableEmployee.isUnderNonCompete"/>
-                        Is Employee under a non-compete contract
+                        <span tooltip="Contact Legal if you are uncertain"
+                              tooltip-placement="right" 
+                            tooltip-trigger="mouseenter" > Is Employee under a non-compete contract</span>
                     </label>    
 
                 </div>
@@ -74,9 +76,11 @@
             <div class="form-group" collapse="!editableEmployee.isUnderNonCompete">
                 <label for="nonCompeteNotes" class="col-sm-3 control-label">nonCompeteNotes</label>
                 <div class="col-sm-9">
-                   <textarea name="nonCompeteNotes" id="nonCompeteNotes" class="form-control" rows="5" cols="40" ng-model="editableEmployee.nonCompeteNotes"></textarea>
+                    <textarea name="nonCompeteNotes" id="nonCompeteNotes" class="form-control" rows="5" cols="40" ng-model="editableEmployee.nonCompeteNotes"></textarea>
                 </div>
             </div>
+            
+
         </fieldset>
 
         <fieldset>
