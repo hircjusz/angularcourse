@@ -1,6 +1,6 @@
-﻿angularFormsApp.controller('efController', function efController($scope, efService) {
+﻿angularFormsApp.controller('efController', function efController($scope, dataService) {
 
-    $scope.employee = efService.employee;
+    $scope.employee = dataService.employee;
 
     $scope.departments = [
         "Engineering",

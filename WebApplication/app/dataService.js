@@ -1,5 +1,5 @@
 ﻿/// <reference path="efService.js" />
-angularFormsApp.factory('efService', function () {
+angularFormsApp.factory('dataService', function () {
     return {
         employee: {
             fullName: 'Milton Waddams',
