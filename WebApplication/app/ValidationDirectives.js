@@ -13,10 +13,13 @@
 
             inputNgEl.bind('blur', function () {
                 el.toggleClass('has-error', formCtrl[inputName].$invalid);
-                helpText.toggleClass('hide', formCtrl[inputName].$valid);
+                //  helpText.toggleClass('hide', formCtrl[inputName].$valid);
 
             });
+            scope.$on('show-errors-event', function () {
 
+                el.toggleClass('has-error', formCtrl[inputName].$invalid);
+            });
 
         }
 

@@ -31,6 +31,8 @@
 
     $scope.submitForm = function() {
 
+        $scope.$broadcast('show-errors-event');
+
         if ($scope.editableEmployee.id == 0) {
             dataService.insertEmployee($scope.editableEmployee);
         } else {
