@@ -21,6 +21,10 @@
                 el.toggleClass('has-error', formCtrl[inputName].$invalid);
             });
 
+            scope.$on('hide-errors-event', function() {
+                el.removeClass('has-error');
+            });
+
         }
 
 

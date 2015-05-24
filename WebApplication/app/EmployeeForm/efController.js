@@ -29,6 +29,11 @@
         $scope.percent = 100 * (value / 10);
     };
 
+    $scope.resetForm=function()
+    {
+        $scope.$broadcast('hide-errors-event');
+
+    };
     $scope.submitForm = function() {
 
         $scope.$broadcast('show-errors-event');
