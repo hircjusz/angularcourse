@@ -10,7 +10,9 @@ angularFormsApp.factory('dataService', function () {
                 perkCar: true,
                 perkStock: false,
                 perkSixWeeks: true,
-                payrollType: "none"
+                payrollType: "none",
+                dateHired:'7/11/2014'
+
             };
         }
         return undefined;

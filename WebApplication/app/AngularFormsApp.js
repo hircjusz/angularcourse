@@ -35,6 +35,11 @@ angularFormsApp.controller("HomeController", function ($scope, $modal, $location
 
     $scope.showUpdateEmployeeForm = function (id) {
         $location.path("/updateEmployeeForm/" + id);
+       // $modal.open({
+       //     templateUrl: "app/EmployeeForm/efTemplate.html",
+       //     controller: "efController"
+       // }
+       //);
     };
 
 });

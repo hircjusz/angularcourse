@@ -1,4 +1,4 @@
-﻿angularFormsApp.controller('efController', function efController($scope,$window,$routeParams,$modalInstance, dataService) {
+﻿angularFormsApp.controller('efController', function efController($scope,$window,$routeParams,$modal, dataService) {
 
     if ($routeParams.id) {
         $scope.employee = dataService.getEmployee($routeParams.id);
