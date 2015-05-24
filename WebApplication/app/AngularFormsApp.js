@@ -25,12 +25,12 @@ angularFormsApp.config(
 angularFormsApp.controller("HomeController", function ($scope, $modal, $location) {
 
     $scope.showCreateEmployeeForm = function () {
-        //$location.path("/newEmployeeForm");
-        $modal.open({
-            templateUrl: "app/EmployeeForm/efTemplate.html",
-            controller: "efController"
-        }
-        );
+        $location.path("/newEmployeeForm");
+        //$modal.open({
+        //    templateUrl: "app/EmployeeForm/efTemplate.html",
+        //    controller: "efController"
+        //}
+        //);
     };
 
     $scope.showUpdateEmployeeForm = function (id) {
