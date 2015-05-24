@@ -14,6 +14,15 @@
         "Finance",
         "Administration"
     ];
+    $scope.programmingLanguages = [
+        'C',
+        'C++',
+        'C#',
+        'Java',
+        'Perl',
+        'pascal',
+        'Javascript'
+    ];
     $scope.submitForm = function() {
 
         if ($scope.editableEmployee.id == 0) {

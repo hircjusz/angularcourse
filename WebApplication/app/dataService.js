@@ -11,7 +11,8 @@ angularFormsApp.factory('dataService', function () {
                 perkStock: false,
                 perkSixWeeks: true,
                 payrollType: "none",
-                dateHired:'7/11/2014'
+                dateHired: '7/11/2014',
+                breakTime: '7/11/2014 4:00'
 
             };
         }
