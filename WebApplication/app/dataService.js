@@ -13,7 +13,9 @@ angularFormsApp.factory('dataService', function () {
                 payrollType: "none",
                 dateHired: '7/11/2014',
                 breakTime: '7/11/2014 4:00',
-                interviewRating:5
+                interviewRating: 5,
+                isUnderNonCompete: true,
+                nonCompeteNotes: 'notes...'
 
             };
         }

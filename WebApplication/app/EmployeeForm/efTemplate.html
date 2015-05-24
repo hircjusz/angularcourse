@@ -26,40 +26,57 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="dateHired" class="col-sm-3 control-label"> Date Hired</label>
+                <label for="dateHired" class="col-sm-3 control-label">Date Hired</label>
                 <div class="col-sm-9">
                     <datepicker ng-model="editableEmployee.dateHired" id="dateHired">
                     </datepicker>
                 </div>
             </div>
-            
+
             <div class="form-group">
-                <label for="breakTime" class="col-sm-3 control-label"> Break Time</label>
+                <label for="breakTime" class="col-sm-3 control-label">Break Time</label>
                 <div class="col-sm-9">
-                    <timepicker  name="breakTime" ng-model="editableEmployee.breakTime" id="breakTime">
+                    <timepicker name="breakTime" ng-model="editableEmployee.breakTime" id="breakTime">
                     </timepicker>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="topProgrammingLanguage" class="col-sm-3 control-label"> Top Programming Language</label>
+                <label for="topProgrammingLanguage" class="col-sm-3 control-label">Top Programming Language</label>
                 <div class="col-sm-9">
-                    <input type="text" id="topProgrammingLanguage" name="topProgrammingLanguage" 
-                           class="form-control" ng-model="editableEmployee.topProgrammingLanguage" 
-                           typeahead="language for language in programmingLanguages | filter:$viewValue"/>
+                    <input type="text" id="topProgrammingLanguage" name="topProgrammingLanguage"
+                        class="form-control" ng-model="editableEmployee.topProgrammingLanguage"
+                        typeahead="language for language in programmingLanguages | filter:$viewValue" />
                 </div>
             </div>
+
+            <div class="form-group">
+                <label for="interviewrating" class="col-sm-3 control-label ">Interview Rating</label>
+                <div class="col-sm-9">
+                    <rating id="interviewrating" name="interviewrating" ng-model="editableEmployee.interviewRating" max="10"
+                        on-hover="hoveringOver(value)" on-leave="overStar=null" />
+                    <span>{{percent}}%</span>
+                </div>
+                <span ng-class="{'label-warning':percent<30,'label-info':percent>=30 && percent<70,'label-success':percent>70}">{{percent}}%</span>
+            </div>
             
-                <div class="form-group">
-                <label for="interviewrating" class="col-sm-3 control-label "> Interview Rating</label>
-                    <div class="col-sm-9">
-                        <rating id="interviewrating" name="interviewrating" ng-model="interviewRating" max="10"
-                                on-hover="hoveringOver(value)" on-leave="overStar=null" />
-                        <span >{{percent}}%</span>
-                    </div>
-                     <span  ng-class="{'label-warning':percent<30,'label-info':percent>=30 && percent<70,'label-success':percent>70}">Value: {{percent}}%</span>
+            
+            <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="isUnderNonCompete" ng-model="editableEmployee.isUnderNonCompete"/>
+                        Is Employee under a non-compete contract
+                    </label>    
+
+                </div>
             </div>
 
+            <div class="form-group" collapse="!editableEmployee.isUnderNonCompete">
+                <label for="nonCompeteNotes" class="col-sm-3 control-label">nonCompeteNotes</label>
+                <div class="col-sm-9">
+                   <textarea name="nonCompeteNotes" id="nonCompeteNotes" class="form-control" rows="5" cols="40" ng-model="editableEmployee.nonCompeteNotes"></textarea>
+                </div>
+            </div>
         </fieldset>
 
         <fieldset>
