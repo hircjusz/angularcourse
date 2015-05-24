@@ -1,68 +1,76 @@
-﻿<form class="form-horizontal" role="form" >
+﻿<div class="modal-header">
+    <h2>Create New Employee</h2>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal" role="form">
 
-    <fieldset>
-        <legend>Basic Information</legend>
-        <div class="form-group">
-            <label for="fullName" class="col-sm-3 control-label">Name</label>
-            <div class="col-sm-9">
-                <input type="text" id="fullName" name="fullName" class="form-control" ng-model="editableEmployee.fullName" />
+        <fieldset>
+            <legend>Basic Information</legend>
+            <div class="form-group">
+                <label for="fullName" class="col-sm-3 control-label">Name</label>
+                <div class="col-sm-9">
+                    <input type="text" id="fullName" name="fullName" class="form-control" ng-model="editableEmployee.fullName" />
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="notes" class="col-sm-3 control-label">Notes</label>
-            <div class="col-sm-9">
-                <textarea name="notes" id="notes" class="form-control" rows="5" cols="5" ng-model="editableEmployee.notes"></textarea>
+            <div class="form-group">
+                <label for="notes" class="col-sm-3 control-label">Notes</label>
+                <div class="col-sm-9">
+                    <textarea name="notes" id="notes" class="form-control" rows="5" cols="5" ng-model="editableEmployee.notes"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="department" class="col-sm-3 control-label">Department</label>
-            <div class="col-sm-9">
-                <select name="deparment" id="department" class="form-control" ng-model="editableEmployee.department" ng-options="dept for dept in departments">
-                </select>
+            <div class="form-group">
+                <label for="department" class="col-sm-3 control-label">Department</label>
+                <div class="col-sm-9">
+                    <select name="deparment" id="department" class="form-control" ng-model="editableEmployee.department" ng-options="dept for dept in departments">
+                    </select>
+                </div>
             </div>
-        </div>
-    </fieldset>
+        </fieldset>
 
-    <fieldset>
-        <legend>Perks</legend>
-        <div class="col-sm-3"></div>
-        <div class="col-sm-9">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="perkCar" ng-model="editableEmployee.perkCar" />Company car</label>
+        <fieldset>
+            <legend>Perks</legend>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="perkCar" ng-model="editableEmployee.perkCar" />Company car</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="perkStock" ng-model="editableEmployee.perkStock" />Stock Options</label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="perkSixWeeks" ng-model="editableEmployee.perkSixWeeks" />Six weeks vacation</label>
+                </div>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="perkStock" ng-model="editableEmployee.perkStock" />Stock Options</label>
+        </fieldset>
+        <fieldset>
+            <legend>Payroll Type</legend>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="payrollType" value="w2" ng-model="editableEmployee.payrollType" />W-2</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="payrollType" value="ten99" ng-model="editableEmployee.payrollType" />1099</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="payrollType" value="none" ng-model="editableEmployee.payrollType" />None</label>
+                </div>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="perkSixWeeks" ng-model="editableEmployee.perkSixWeeks" />Six weeks vacation</label>
-            </div>
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Payroll Type</legend>
-        <div class="col-sm-3"></div>
-        <div class="col-sm-9">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="payrollType" value="w2"  ng-model="editableEmployee.payrollType"/>W-2</label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="payrollType" value="ten99" ng-model="editableEmployee.payrollType" />1099</label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="payrollType" value="none" ng-model="editableEmployee.payrollType" />None</label>
-            </div>
-        </div>
-    </fieldset>
-    <br/><br/>
+        </fieldset>
+
+    </form>
+</div>
+
+<div class="modal-footer">
     <div class="col-sm-3"></div>
     <div class="col-sm-9">
         <input type="submit" class="btn btn-primary" value="Cancel" ng-click="cancelForm()" />
         <input type="submit" class="btn btn-primary" value="Submit" ng-click="submitForm()" />
     </div>
-</form>
+</div>
