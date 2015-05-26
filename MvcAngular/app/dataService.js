@@ -1,5 +1,11 @@
 ﻿/// <reference path="efService.js" />
-angularFormsApp.factory('dataService', function () {
+angularFormsApp.factory('dataService',
+    ['$http',function ($http) {
+
+
+    var getEmployees = function() {
+        return $http.get('Employee/GetEmployees');
+    };
 
     var getEmployee = function (id) {
         if (id == 123) {
@@ -24,7 +30,7 @@ angularFormsApp.factory('dataService', function () {
     };
 
     var insertEmployee= function(employee) {
-        return true;
+        return $http.post("Employee/Create", employee);
     };
 
     var updateEmployee = function (employee) {
@@ -32,8 +38,9 @@ angularFormsApp.factory('dataService', function () {
     };
 
     return {
+        getEmployees:getEmployees,
         getEmployee: getEmployee,
         insertEmployee: insertEmployee,
         updateEmployee: updateEmployee
     };
-});
+}]);

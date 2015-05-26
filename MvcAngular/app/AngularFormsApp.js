@@ -1,7 +1,8 @@
 ﻿var angularFormsApp = angular.module('angularFormsApp', ["ngRoute", "ui.bootstrap"]);
 
 angularFormsApp.config(
-    function ($routeProvider) {
+    ['$routeProvider', '$locationProvider',
+    function ($routeProvider, $locationProvider) {
 
         $routeProvider
             .when("/home", {
@@ -20,26 +21,33 @@ angularFormsApp.config(
             .otherwise({
                 redirectTo: "/home"
             });
-    }
+        //$locationProvider.html5Mode(true);
+    }]
 );
-angularFormsApp.controller("HomeController", function ($scope, $modal, $location) {
+angularFormsApp.controller("HomeController",
+    ['$scope', '$modal', '$location', 'dataService',
+    function ($scope, $modal, $location, dataService) {
 
-    $scope.showCreateEmployeeForm = function () {
-        $location.path("/newEmployeeForm");
-        //$modal.open({
-        //    templateUrl: "app/EmployeeForm/efTemplate.html",
-        //    controller: "efController"
-        //}
-        //);
-    };
+        dataService.getEmployees().then(function (results) {
+            var data = results.data;
+        });
 
-    $scope.showUpdateEmployeeForm = function (id) {
-        $location.path("/updateEmployeeForm/" + id);
-       // $modal.open({
-       //     templateUrl: "app/EmployeeForm/efTemplate.html",
-       //     controller: "efController"
-       // }
-       //);
-    };
+        $scope.showCreateEmployeeForm = function () {
+            $location.path("/newEmployeeForm");
+            //$modal.open({
+            //    templateUrl: "app/EmployeeForm/efTemplate.html",
+            //    controller: "efController"
+            //}
+            //);
+        };
 
-});
+        $scope.showUpdateEmployeeForm = function (id) {
+            $location.path("/updateEmployeeForm/" + id);
+            // $modal.open({
+            //     templateUrl: "app/EmployeeForm/efTemplate.html",
+            //     controller: "efController"
+            // }
+            //);
+        };
+
+    }]);

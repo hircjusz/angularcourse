@@ -53,6 +53,8 @@ namespace MvcAngular
                       "~/app/ValidationService.js",
                        "~/app/EmployeeForm/efController.js",
                        "~/app/EmployeeForm/efDirective.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
 
 
