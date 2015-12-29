@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Stopwatch</title>
+</head>
+
+<body ng-app="HelloWorldApp" ng-controller="MainController">
+    HelloWorld
+        <input type="text" ng-model="message" placeholder="Enter message" />
+    <hello-world></hello-world>
+    <hello-world-isolated message="message"></hello-world-isolated>
+
+    <outer-directive>
+        <inner-directive></inner-directive>
+    </outer-directive>
+    <p transclude-directive>Hello World!</p>
+
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="mastering/directives/helloworld-dctv.js"></script>
+</body>
+</html>

@@ -7,6 +7,14 @@
 
 </head>
 <body class="container">
+
+    <label>Their URL field:</label>
+    <input type="text" ng-model="theirUrl">
+    <div my-directive
+        some-attr="theirUrl"
+        my-link-text="Click me to go to Google">
+    </div>
+
     <h1>Gmail Clone</h1>
     <div ng-view class="flex"></div>
 
@@ -16,10 +24,11 @@
     <script src="gmail/js/gmail.js"></script>
     <script src="gmail/js/factories/EmailFactory.js"></script>
     <script src="gmail/js/factories/InboxFactory.js"></script>
-     <script src="gmail/js/controllers/EmailController.js"></script>
+    <script src="gmail/js/controllers/EmailController.js"></script>
     <script src="gmail/js/controllers/InboxController.js"></script>
     <script src="gmail/js/directives/EmailDrctv.js"></script>
     <script src="gmail/js/directives/InboxDrctv.js"></script>
+    <script src="gmail/js/directives/HrefInpDrctv.js"></script>
 </body>
 </html>
 

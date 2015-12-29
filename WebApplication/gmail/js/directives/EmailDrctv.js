@@ -7,7 +7,7 @@
         scope: true,
         templateUrl: "/gmail/js/directives/email.tmpl.html",
         controllerAs: 'email',
-        controller: function($routeParams, $scope, EmailFactory) {
+        controller: function($routeParams, $scope, EmailFactory,$interpolate) {
             this.message = {};
             this.reply = function(message) {
                 EmailFactory.reply(message);
@@ -20,6 +20,13 @@
                     $scope.$parent.email.title = this.message.subject;
                 }));
             }
+
+            $scope.$watch('response', function(body) {
+                if (body) {
+                    var template = $interpolate(body);
+
+                }
+            });
         },
         link: function(scope, element, attrs, ctrl) {
             var textarea = element.find('.email__response-text')[0];
